@@ -12,8 +12,8 @@ SQL (Structured Query Language) est le langage standard pour interagir avec les 
   - Qu'est-ce que SQL ? Pourquoi est-il important ?
   - Historique et différents dialectes.
   - Aperçu des SGBD courants.
-
-  ### Les bases de SQL 📝
+  - 
+  ### [Les bases de SQL 📝 ](https://github.com/Gogo-IGM-BK/SQL/tree/Les-bases-de-SQL)
   - Structure d'une base de données : tables, lignes, et colonnes.
   - Types de données courants.
   - Les requêtes élémentaires : SELECT, FROM, WHERE.
