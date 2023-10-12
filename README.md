@@ -42,7 +42,7 @@ SQL (Structured Query Language) est le langage standard pour interagir avec les 
   - Fonctions numériques.
   - Fonctions de date.
 
-  ### [Index et performances](https://github.com/Gogo-IGM-BK/SQL/blob/Fonctions-SQL/README.md)
+  ### [Index et performances](https://github.com/Gogo-IGM-BK/SQL/blob/Index-et-performances/README.md)
   
   - Introduction aux index.
   - Création, modification et suppression d'index.
