@@ -1,63 +1,46 @@
-# 🚀  SQL
+# Manipulation de données 💽
+## Insertion, mise à jour et suppression de données
 
-Bienvenue dans ce Repo SQL pour la data ! Ce dépôt contient tout le matériel nécessaire pour maîtriser SQL, de la base aux concepts avancés.
+Pour interagir avec vos données, il est crucial de savoir comment ajouter, modifier et supprimer des enregistrements. Ces opérations sont réalisées avec les commandes INSERT, UPDATE, et DELETE.
 
-## 📖 Introduction
+Exemple :
 
-SQL (Structured Query Language) est le langage standard pour interagir avec les bases de données relationnelles. Maîtriser SQL vous ouvre la porte à l'analyse de données, au développement backend et à une multitude d'autres compétences en technologie.
+### Ajouter un nouveau client :
 
-## 📚 Contenu de la formation
+```sql
 
-  ### Introduction au SQL 🌐
-  - Qu'est-ce que SQL ? Pourquoi est-il important ?
-  - Historique et différents dialectes.
-  - Aperçu des SGBD courants.
-  - 
-  ### [Les bases de SQL 📝](https://github.com/Gogo-IGM-BK/SQL/tree/Les-bases-de-SQL)
-  - Structure d'une base de données : tables, lignes, et colonnes.
-  - Types de données courants.
-  - Les requêtes élémentaires : SELECT, FROM, WHERE.
-  - Tri des résultats : ORDER BY.
-  - Filtrage avec WHERE.
+INSERT INTO Clients (Nom, Email) VALUES ('Dupont', 'dupont@email.com');
+```
+### Mettre à jour l'email d'un client :
 
-  ### [Requêtes avancées 🔍](https://github.com/Gogo-IGM-BK/SQL/blob/Requ%C3%AAtes-avanc%C3%A9es/README.md)
-  - Jointures : INNER JOIN, LEFT/RIGHT JOIN, FULL JOIN.
-  - Agrégation : COUNT, SUM, AVG, MIN, MAX.
-  - GROUP BY et HAVING.
-  - Sous-requêtes et requêtes imbriquées.
+```sql
 
-  ### Manipulation de données 💽
-  - Insertion, mise à jour et suppression de données.
-  - Comprendre les transactions.
+UPDATE Clients SET Email = 'new.email@email.com' WHERE Nom = 'Dupont';
+```
+### Supprimer un client :
 
-  ### Création et gestion de bases de données 🛠️
-  - Création et modification de tables. CREATE DATABASE, CREATE TABLE.
-  - Introduction aux contraintes. PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL.
-  - ALTER TABLE : ajout/suppression de colonnes, changement de type de données.
-  - DROP DATABASE, DROP TABLE.
+```sql
 
-  ### Fonctions SQL
+DELETE FROM Clients WHERE Nom = 'Dupont';
+```
+## Comprendre les transactions
 
-  - Fonctions de chaînes.
-  - Fonctions numériques.
-  - Fonctions de date.
+Une transaction est une séquence d'une ou plusieurs instructions SQL qui sont exécutées en tant qu'unité de travail. Les transactions peuvent être validées (COMMIT) ou annulées (ROLLBACK).
 
-  ### Index et performances
-  
-  - Introduction aux index.
-  - Création, modification et suppression d'index.
-  - Plan d'exécution et optimisation de requêtes.
+Exemple :
+Lors de l'ajout d'une nouvelle commande, il peut être nécessaire d'ajouter un nouveau client et de mettre à jour le stock. Ces opérations doivent être effectuées ensemble.
 
-  ### Vues, procédures stockées et déclencheurs
+```sql
 
-  - Création et utilisation de vues.
-  - Introduction aux procédures stockées.
-  - Déclencheurs (Triggers) et leurs utilisations.
-    
-## 🤝 Contribution
+BEGIN TRANSACTION;
 
-N'hésitez pas à ouvrir des issues pour toute question ou suggestion. Les Pull Requests sont également les bienvenues si vous souhaitez améliorer le contenu ou corriger des erreurs.
+INSERT INTO Clients (Nom, Email) VALUES ('Durand', 'durand@email.com');
+INSERT INTO Commandes (Produit, Quantité) VALUES ('Chaise', 3);
+UPDATE Stock SET Quantité = Quantité - 3 WHERE Produit = 'Chaise';
 
-## 📣 Remerciements
+-- Si tout est bon
+COMMIT;
 
-Merci de vous être intéressé à cette formation. Si vous la trouvez utile, n'hésitez pas à la ⭐ (étoiler) et à la partager avec vos collègues !
+-- Sinon
+ROLLBACK;
+```
