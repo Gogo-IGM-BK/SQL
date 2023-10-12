@@ -36,13 +36,13 @@ SQL (Structured Query Language) est le langage standard pour interagir avec les 
   - ALTER TABLE : ajout/suppression de colonnes, changement de type de données.
   - DROP DATABASE, DROP TABLE.
 
-  ### Fonctions SQL
+  ### [Fonctions SQL](https://github.com/Gogo-IGM-BK/SQL/blob/Fonctions-SQL/README.md)
 
   - Fonctions de chaînes.
   - Fonctions numériques.
   - Fonctions de date.
 
-  ### Index et performances
+  ### [Index et performances](https://github.com/Gogo-IGM-BK/SQL/blob/Fonctions-SQL/README.md)
   
   - Introduction aux index.
   - Création, modification et suppression d'index.
