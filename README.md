@@ -20,7 +20,7 @@ SQL (Structured Query Language) est le langage standard pour interagir avec les 
   - Tri des résultats : ORDER BY.
   - Filtrage avec WHERE.
 
-  ### Requêtes avancées 🔍
+  ### [Requêtes avancées 🔍](https://github.com/Gogo-IGM-BK/SQL/blob/Requ%C3%AAtes-avanc%C3%A9es/README.md)
   - Jointures : INNER JOIN, LEFT/RIGHT JOIN, FULL JOIN.
   - Agrégation : COUNT, SUM, AVG, MIN, MAX.
   - GROUP BY et HAVING.
