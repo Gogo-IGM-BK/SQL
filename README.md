@@ -30,7 +30,7 @@ SQL (Structured Query Language) est le langage standard pour interagir avec les 
   - Insertion, mise à jour et suppression de données.
   - Comprendre les transactions.
 
-  ### Création et gestion de bases de données 🛠️
+  ### [Création et gestion de bases de données 🛠️](https://github.com/Gogo-IGM-BK/SQL/blob/Cr%C3%A9ation-et-gestion-de-bases-de-donn%C3%A9es/README.md)
   - Création et modification de tables. CREATE DATABASE, CREATE TABLE.
   - Introduction aux contraintes. PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL.
   - ALTER TABLE : ajout/suppression de colonnes, changement de type de données.
