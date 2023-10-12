@@ -26,7 +26,7 @@ SQL (Structured Query Language) est le langage standard pour interagir avec les 
   - GROUP BY et HAVING.
   - Sous-requêtes et requêtes imbriquées.
 
-  ### Manipulation de données 💽
+  ### [Manipulation de données 💽](https://github.com/Gogo-IGM-BK/SQL/tree/Manipulation-de-donn%C3%A9es)
   - Insertion, mise à jour et suppression de données.
   - Comprendre les transactions.
 
