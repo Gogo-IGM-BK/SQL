@@ -48,7 +48,7 @@ SQL (Structured Query Language) est le langage standard pour interagir avec les 
   - Création, modification et suppression d'index.
   - Plan d'exécution et optimisation de requêtes.
 
-  ### Vues, procédures stockées et déclencheurs
+  ### [Vues, procédures stockées et déclencheurs](https://github.com/Gogo-IGM-BK/SQL/blob/Vues,-proc%C3%A9dures-stock%C3%A9es-et-d%C3%A9clencheurs/README.md)
 
   - Création et utilisation de vues.
   - Introduction aux procédures stockées.
