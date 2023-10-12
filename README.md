@@ -1,63 +1,52 @@
-# 🚀  SQL
 
-Bienvenue dans ce Repo SQL pour la data ! Ce dépôt contient tout le matériel nécessaire pour maîtriser SQL, de la base aux concepts avancés.
+# Requêtes avancées 🔍
+## Jointures
 
-## 📖 Introduction
+Les jointures permettent de combiner des données de deux tables ou plus en fonction d'une colonne commune. Les types de jointures courantes comprennent INNER JOIN, LEFT/RIGHT JOIN, et FULL JOIN.
 
-SQL (Structured Query Language) est le langage standard pour interagir avec les bases de données relationnelles. Maîtriser SQL vous ouvre la porte à l'analyse de données, au développement backend et à une multitude d'autres compétences en technologie.
+Exemple :
+Relier les tables Clients et Commandes sur l'ID_Client :
+```sql
 
-## 📚 Contenu de la formation
+SELECT Clients.Nom, Commandes.Produit 
+FROM Clients 
+INNER JOIN Commandes 
+ON Clients.ID_Client = Commandes.ID_Client;
+```
+## Agrégation
 
-  ### Introduction au SQL 🌐
-  - Qu'est-ce que SQL ? Pourquoi est-il important ?
-  - Historique et différents dialectes.
-  - Aperçu des SGBD courants.
-  - 
-  ### [Les bases de SQL 📝](https://github.com/Gogo-IGM-BK/SQL/tree/Les-bases-de-SQL)
-  - Structure d'une base de données : tables, lignes, et colonnes.
-  - Types de données courants.
-  - Les requêtes élémentaires : SELECT, FROM, WHERE.
-  - Tri des résultats : ORDER BY.
-  - Filtrage avec WHERE.
+Les fonctions d'agrégation fournissent un moyen de résumer un ensemble de données. Parmi elles, on trouve COUNT, SUM, AVG, MIN, et MAX.
 
-  ### Requêtes avancées 🔍
-  - Jointures : INNER JOIN, LEFT/RIGHT JOIN, FULL JOIN.
-  - Agrégation : COUNT, SUM, AVG, MIN, MAX.
-  - GROUP BY et HAVING.
-  - Sous-requêtes et requêtes imbriquées.
+Exemple :
+Obtenir le coût total de toutes les commandes :
+```sql
 
-  ### Manipulation de données 💽
-  - Insertion, mise à jour et suppression de données.
-  - Comprendre les transactions.
+SELECT SUM(Prix) AS TotalPrix FROM Commandes;
+```
+## GROUP BY et HAVING
 
-  ### Création et gestion de bases de données 🛠️
-  - Création et modification de tables. CREATE DATABASE, CREATE TABLE.
-  - Introduction aux contraintes. PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL.
-  - ALTER TABLE : ajout/suppression de colonnes, changement de type de données.
-  - DROP DATABASE, DROP TABLE.
+GROUP BY est utilisé pour regrouper les lignes ayant des valeurs communes. HAVING est utilisé pour filtrer les résultats agrégés.
 
-  ### Fonctions SQL
+Exemple :
+Nombre de commandes par client avec un total supérieur à 100 :
+```sql
 
-  - Fonctions de chaînes.
-  - Fonctions numériques.
-  - Fonctions de date.
+SELECT ID_Client, COUNT(ID_Commande) 
+FROM Commandes 
+GROUP BY ID_Client 
+HAVING SUM(Prix) > 100;
+```
+## Sous-requêtes et requêtes imbriquées
 
-  ### Index et performances
-  
-  - Introduction aux index.
-  - Création, modification et suppression d'index.
-  - Plan d'exécution et optimisation de requêtes.
+Ces requêtes permettent d'effectuer une requête à l'intérieur d'une autre requête pour filtrer ou transformer davantage les données.
 
-  ### Vues, procédures stockées et déclencheurs
+Exemple :
+Trouver les clients qui n'ont pas passé de commandes :
 
-  - Création et utilisation de vues.
-  - Introduction aux procédures stockées.
-  - Déclencheurs (Triggers) et leurs utilisations.
-    
-## 🤝 Contribution
+```sql
 
-N'hésitez pas à ouvrir des issues pour toute question ou suggestion. Les Pull Requests sont également les bienvenues si vous souhaitez améliorer le contenu ou corriger des erreurs.
+SELECT Nom FROM Clients 
+WHERE ID_Client NOT IN 
+(SELECT ID_Client FROM Commandes);
 
-## 📣 Remerciements
-
-Merci de vous être intéressé à cette formation. Si vous la trouvez utile, n'hésitez pas à la ⭐ (étoiler) et à la partager avec vos collègues !
+```
